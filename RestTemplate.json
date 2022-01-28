@@ -1,0 +1,658 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "id": "0128d515-26ca-4bd7-a959-87e4f014a7cd",
+        "name": "Filter"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Service",
+            "id": "13b45ad3-cf73-46ab-9d73-158e12eb86a1",
+            "name": "filter전처리"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"name\" : \"경무\",\n  \"age\" : 26\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8080",
+                  "path": "/api/user"
+                },
+                "id": "808ac803-0733-4562-8c6b-f1c445d8d709",
+                "name": "전처리1",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "type": "Project",
+        "id": "c13f9e62-9470-4790-b13c-b4d10404aa58",
+        "name": "HelloSpringBoot"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Service",
+            "id": "5b136c6e-ffb8-4c67-bcef-1ef30e9c958f",
+            "name": "get api2"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": [
+                      {
+                        "enabled": true,
+                        "name": "name",
+                        "value": "경무"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "age",
+                        "value": "26"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "love",
+                        "value": "청화"
+                      }
+                    ]
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:9090",
+                  "path": "/get2/query1"
+                },
+                "id": "0a65f91d-1f5d-49c7-a841-4a95be0acd5b",
+                "name": "query1 (MAP, 람다 활용)",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": [
+                      {
+                        "enabled": true,
+                        "name": "name",
+                        "value": "경무"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "age",
+                        "value": "26"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "love",
+                        "value": "청화"
+                      }
+                    ]
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:9090",
+                  "path": "/get2/query2"
+                },
+                "id": "9d90053d-8bf9-41c9-a548-24acc53d98a7",
+                "name": "query2 (정해진 값만 쿼리로 수신)",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": [
+                      {
+                        "enabled": true,
+                        "name": "name",
+                        "value": "경무"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "age",
+                        "value": "26"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "love",
+                        "value": "청화"
+                      }
+                    ]
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:9090",
+                  "path": "/get2/query3"
+                },
+                "id": "d6da4f8b-b8df-4a4d-8c2f-a2fe75895768",
+                "name": "query3 (DTO 쿼리로 수신)",
+                "headers": []
+              }
+            }
+          ]
+        },
+        {
+          "entity": {
+            "type": "Scenario",
+            "id": "c0124a5c-5f63-4967-9519-df3f53c1d3ff",
+            "name": "get api1"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:9090",
+                  "path": "/api/hello"
+                },
+                "id": "808ea8ee-5a44-45c5-a0cb-a74caf1f3fcf",
+                "name": "REST CONTROLLER 테스트",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:9090",
+                  "path": "/get1/getmapping-value"
+                },
+                "id": "d148b6c1-a9e6-4bcd-84aa-683b1fe1058c",
+                "name": "GetMapping 어노테이션 value 속성 테스트",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:9090",
+                  "path": "/get1/getmapping-path"
+                },
+                "id": "dcba2137-b0d7-416f-aa4f-c1697595cc9e",
+                "name": "GetMapping 어노테이션  path 속성 테스트",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:9090",
+                  "path": "/get1/request-method-get"
+                },
+                "id": "2f67760f-2c08-44ee-8570-67bcf2922c6c",
+                "name": "requestmapping 어노테이션  RequsetMethod.GET 속성 테스트",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:9090",
+                  "path": "/get1/path-valiable/value"
+                },
+                "id": "e284b31b-7208-49ea-bd4b-7f82a044e01a",
+                "name": "Get pathValiable 테스트",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:9090",
+                  "path": "/get1/path-valiable2/value"
+                },
+                "id": "e19789d7-0682-4482-b7d9-6fd50e720794",
+                "name": "Get pathValiable  valiable 이름, 파라미터 이름 다른 경우 테스트",
+                "headers": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "type": "Project",
+        "id": "16687d7b-92d3-4beb-aedd-636d20cdd13e",
+        "name": "RestTemplate"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Service",
+            "id": "c4a0b862-4038-49e5-a6ae-2c5a769b9be9",
+            "name": "Service 2"
+          }
+        },
+        {
+          "entity": {
+            "type": "Service",
+            "id": "003333bd-f7cc-4317-a0de-8751773301ea",
+            "name": "서버확인"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8080",
+                  "path": "/api/client/"
+                },
+                "id": "1f35ebcb-0867-45a8-b1a9-368d3cdd4791",
+                "name": "Copy of 클라이언트 서버 작동확인",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": [
+                      {
+                        "enabled": true,
+                        "name": "name",
+                        "value": "경무"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "age",
+                        "value": "26"
+                      }
+                    ]
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:9090",
+                  "path": "/api/server/hello"
+                },
+                "id": "9e53d4bc-b349-4009-af8e-2902f6abcdc9",
+                "name": "서버 서버 작동확인",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8080",
+                  "path": "/api/client"
+                },
+                "id": "fcdbf166-283a-43fa-ac6f-10793efd40a6",
+                "name": "클라이언트 서버 작동확인",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8080",
+                  "path": "/api/client/"
+                },
+                "id": "774001a5-a76d-4508-9c48-f7a9794b2571",
+                "name": "클라이언트 서버 헤더포함 + 제너릭으로 아무 데이터나 받기",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8080",
+                  "path": "/api/client/generic"
+                },
+                "id": "57643801-f4cc-43cc-9f11-56c70c42c5fc",
+                "name": "클라이언트 서버 헤더포함 작동확인",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "environments": [
+    {
+      "id": "4f30267d-babd-4a54-9f18-ac3f4571ad56",
+      "name": "get api2",
+      "variables": {
+        "00a1d93e-e19a-493e-be1a-e74960574333": {
+          "createdAt": "2022-01-26T11:03:52.823+09:00",
+          "name": "",
+          "value": "",
+          "enabled": true,
+          "private": false
+        }
+      }
+    }
+  ]
+}
